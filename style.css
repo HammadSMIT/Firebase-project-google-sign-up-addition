@@ -1,0 +1,108 @@
+@font-face {
+    font-family: "hammad";
+    src: url(./Poppins-Medium.ttf);
+}
+*{
+    font-family: hammad;
+}
+body{
+
+    background-color: !important;
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    
+}
+
+
+
+
+.container{
+    
+   
+    background-color:  #6495ED !important;
+    border:  2px solid white !important ; 
+    width: 300px !important ;
+    height:  100% !important;
+    border-radius: 40PX !important;
+    
+}
+
+.inp-fields{
+    width: 250px  !important; 
+    margin-top: 35px !important;
+    border-radius: 25px !important ;
+    padding-left: 10px  !important;
+    border: 2px solid white !important ;
+    /* padding: 5px !important; */
+    font-family: 'Poppins' , sans-serif !important ; 
+}
+.btn{
+    margin-top: 50px !important;
+    border: 2px solid transparent !important;
+    width:  200px !important;
+    border-radius: 100px !important;
+
+    
+
+}
+
+h1{
+    margin-top: 15px !important ;
+    padding-bottom: 15px !important;
+    color: white !important ;
+    font-weight: bolder !important;
+    border-bottom: double green !important;
+    font-size: xx-large !important;
+
+}
+
+.container > .para{
+    margin-top: 50px !important;
+    margin-right: 100px !important;
+    /* color: green !important; */
+
+}
+
+
+#welcome-body{
+    background-color: !important;
+    display: grid;
+    place-items: center;
+    height: 100vh !important ;
+    
+
+
+
+}
+
+#logout-btn{
+    width: 50% ;
+}
+
+
+#GetInp{
+    border-radius: 20px !important ;
+    /* margin-bottom: px !important; */
+    width:250px !important;
+    padding-left: 20px !important;
+}
+
+#GetInp :active {
+    color: aliceblue !important;
+}
+
+.todo-btn {
+    /* display: block !important; */
+  width: 80px !important;
+  margin-bottom: 10px !important;
+}
+
+main .todo-h1{
+    width: 200px !important;
+}
+
+.req-pass:hover{
+    cursor: pointer !important;
+}
+
