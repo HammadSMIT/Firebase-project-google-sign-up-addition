@@ -60,8 +60,13 @@ h1{
 .container > .para{
     margin-top: 50px !important;
     margin-right: 100px !important;
+    color: aliceblue !important;
     /* color: green !important; */
 
+}
+
+.container > .para:hover{
+    cursor: pointer !important;
 }
 
 

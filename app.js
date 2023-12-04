@@ -2,7 +2,7 @@
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
 import { getFirestore, collection, addDoc, onSnapshot, doc, deleteDoc, updateDoc } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
-import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword , GoogleAuthProvider , signInWithPopup } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
+import { getAuth,createUserWithEmailAndPassword,signInWithEmailAndPassword,GoogleAuthProvider,signInWithPopup } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-auth.js";
 
 
 const firebaseConfig = {
@@ -18,7 +18,7 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-const provider = new GoogleAuthProvider(app);
+const provider = new GoogleAuthProvider();
 const db = getFirestore(app);
 const ids = []  
 
@@ -49,6 +49,8 @@ async function AddTodo() {
 function getData() {
     let ul = document.querySelector("#getul");
 
+    if(ul){
+
     
     onSnapshot(collection(db, 'todos'), (data) => {
         data.docChanges().forEach((newData) => {
@@ -72,6 +74,8 @@ function getData() {
 
         })
     })
+
+}
 
 }
 
@@ -137,7 +141,7 @@ if(btn){
                    });
                    console.log("Document written with ID: ", docRef.id);
 
-                   // alert("Are you sure you want to signup");
+                   
                   
                
                
@@ -188,13 +192,6 @@ if(btn1){
 }
 
 
-// =============== logout =================
-
-let logoutbtn = document.querySelector("#LObtn")
-logoutbtn.addEventListener("click", () => {
-   localStorage.clear()
-   location.href = "./signup.html"
-})
 
 
 // ========= WINDOW ===========
@@ -279,60 +276,26 @@ function signin() {
 
        alert('Sorry user not found')
 
-       location.href = ("./signup.html")
+       location.href = ("./index.html")
    }
 
 
 
 }
 
-// function logout() {
 
 
-//     localStorage.clear()
-
-//     location.href = './signup.html'
-
-
-// }
-
-
-
-
-// var getrem2 = document.getElementById('reminder2').innerHTML="Please fill all the fields";
-// if( email =! ' ' || password != ' '){
-//     document.write(getrem2)
-// }
-
-
-// ========== Windows ===========
+// // ========== Windows ===========
 
 window.signin = signin
 window.signup = signup
 
+// =============== logout =================
 
-// ========= LOGIN WITH GOOGLE ===========
-
-
-
-let google = document.querySelector(".google");
-if (google){
- 
-       google.addEventListener('click', () => {
-     
-         signInWithPopup(auth, provider)
-           .then((result) => {
-             const credential = GoogleAuthProvider.credentialFromResult(result);
-             const user = result.user;
-             console.log(user);
-             window.location = "./todo.html"
-     
-           }).catch((error) => {
-          
-             console.log(error)
-     
-           });
-     
-       });
-     }
-
+let logoutbtn = document.querySelector("#LObtn")
+if (logoutbtn){
+logoutbtn.addEventListener("click", () => {
+   localStorage.clear()
+   location.href = "./index.html"
+})
+}
